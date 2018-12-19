@@ -1,0 +1,64 @@
+<div class="container-fluid">
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner row w-100 mx-auto">
+      <div class="carousel-item col-md-4 active">
+        <div class="card">
+          <img class="card-img-top img-fluid" src="https://freeform.azureedge.net/showms/2018/331/e58c7e4c-ad13-42e0-827d-249860236b5e.jpg"
+            alt="Card image cap">
+        </div>
+      </div>
+
+      <div class="carousel-item col-md-4" *ngFor="let movie of movie">
+        <div class="card jscard" id="{{movie.MoviesID}}">
+          <img class="card-img-top img-fluid" src="{{movie.Thumb}}" alt="Card image">
+          <div class="mp-card-body d-none" id="{{movie.MoviesID}}-card-carouzel">
+            <div class="pt-5 mt-5">
+              <h2 class="card-title text-warning text-uppercase">{{movie.Name}}</h2>
+              <h3 class="card-title text-warning">{{movie.Release_Date}}</h3>
+              <p class="card-text">{{movie.Sinopsis}}</p>
+              <div>
+                <span class="text-warning">Cact Starts</span>
+                <Span>Icon Likes Number</Span>
+              </div>
+              <div class="pt-5">
+                <button class="btn btn-outline-primary w-100 mb-2">PLAY</button>
+                <button class="btn btn-outline-danger w-100">DETALLES</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+
+  <div class="mt-4">
+    <div class="col-md-3 d-inline-block" *ngFor="let movie of movie">
+      <div class="card w-100 mb-2 new" id="{{movie.MoviesID}}">
+        <img class="card-img-top img-fluid" src="{{movie.Thumb}}" alt="Card image">
+        <div class="w-100 h-100 mp-card-body d-none" id="{{movie.MoviesID}}-card">
+          <div class="mt-1">
+            <h2 class="card-title text-warning text-uppercase">{{movie.Name}}</h2>
+            <h3 class="card-title text-warning">{{movie.Release_Date}}</h3>
+            <p class="card-text">{{movie.Sinopsis}}</p>
+            <div>
+              <span class="text-warning">Cact Starts</span>
+              <Span>Icon Likes Number</Span>
+            </div>
+            <div class="pt-2">
+              <button class="btn btn-outline-primary w-100 mb-2">PLAY</button>
+              <button class="btn btn-outline-danger w-100">DETALLES</button>
+            </div>
+          </div>
+        </div>
+      </div> 
+    </div> 
+  </div>
+</div>
